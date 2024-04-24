@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Twister_Maui.CircleColor">
+    <Grid>
+        <!-- Draws a circle with a blue interior. -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Outer Border -->
+        <Ellipse x:Name="OuterBorder" Fill="{Binding CircleStroke}" Stroke="{Binding CircleStroke}" StrokeThickness="5" WidthRequest="{Binding HeightRequest, Source={RelativeSource Self}}" HeightRequest="100">
+            <Ellipse.Style>
+                <Style TargetType="{x:Type Ellipse}">
+                    <Setter Property="Margin" Value="3"/>
+                    <!--<Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=InnerCircle}" Value="True">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" To="0" From="3" SpeedRatio="15" Duration="0:0:5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetProperty="Margin" To="3" From="0" SpeedRatio="15" Duration="0:0:5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                            <Setter Property="Margin" Value="0"/>
+                        </DataTrigger>
+                    </Style.Triggers>-->
+                </Style>
+            </Ellipse.Style>
+            <!--<Ellipse.Effects>
+                <
+                <BlurEffect Radius="4"/>
+            </Ellipse.Effects>-->
+        </Ellipse>
+        <!-- Black Background -->
+        <Ellipse x:Name="MiddleBorder" Fill="{Binding CircleBackground}" Margin="5" WidthRequest="{Binding HeightRequest, Source={RelativeSource Self}}" HeightRequest="100"/>
+        <!-- Circle Fill -->
+        <Ellipse x:Name="InnerCircle" Fill="{Binding CircleFill}" Stroke="{Binding CircleFill}" StrokeThickness="5" Margin="10" WidthRequest="{Binding HeightRequest, Source={RelativeSource Self}}" HeightRequest="100">
+            <!--<Ellipse.Effects>
+                <BlurEffect Radius="2"/>
+            </Ellipse.Effects>-->
+        </Ellipse>
+    </Grid>
+</ContentView>
