@@ -63,5 +63,13 @@ public partial class CircleColor : ContentView
 	{
 		InitializeComponent();
         BindingContext = this;
-	}
+
+        
+
+    }
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        Console.WriteLine("Tapped");
+    }
 }
