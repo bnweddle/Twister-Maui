@@ -36,7 +36,7 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-            <local:CircleColor CircleBackground="#36454F" CircleFill="#FF5733" CircleStroke="#CD310F"/>
+            <local:CircleColor CircleBackground="#36454F" CircleFill="#FF5733" CircleStroke="HotPink"/>
 
         </VerticalStackLayout>
     </ScrollView>

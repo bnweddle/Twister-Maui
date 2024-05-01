@@ -1,4 +1,7 @@
-using Microsoft.UI.Xaml;
+
+
+using Microsoft.Maui.Controls.Shapes;
+using Windows.Services.Maps;
 
 namespace Twister_Maui;
 
@@ -71,5 +74,6 @@ public partial class CircleColor : ContentView
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         Console.WriteLine("Tapped");
+        OuterBorder.ThicknessTo(new Thickness(0), new Thickness(3), t => OuterBorder.Margin = t, 4000);
     }
 }
