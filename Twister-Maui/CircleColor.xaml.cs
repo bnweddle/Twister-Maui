@@ -71,9 +71,20 @@ public partial class CircleColor : ContentView
 
     }
 
+    private void AnimateEllipseMargin()
+    {
+        var ellipse = InnerCircle;
+        var animation = new Animation(v => ellipse.HeightRequest = v, 100, 200, Easing.Linear);
+
+        // Optionally, you can loop the animation
+        var parentAnimation = new Animation();
+        parentAnimation.Add(0, 1, animation);
+        parentAnimation.Commit(this, "HeightAnimation", length: 1000, repeat: () => false);
+    }
+
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         Console.WriteLine("Tapped");
-        OuterBorder.ThicknessTo(new Thickness(0), new Thickness(3), t => OuterBorder.Margin = t, 4000);
+        AnimateEllipseMargin();
     }
 }
